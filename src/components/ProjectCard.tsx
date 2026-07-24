@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: { project: ProjectProps }) {
         padding: '28px',
         display: 'flex',
         flexDirection: 'column',
-        justify: 'space-between',
+        justifyContent: 'space-between',
         position: 'relative',
         overflow: 'hidden',
         height: '100%',
