@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Smartphone, ArrowUp, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -27,8 +27,12 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-              <Smartphone className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-500 p-[1px] overflow-hidden">
+              <img
+                src="/zernoshlogo.png"
+                alt="Zernosh Haider Logo"
+                className="w-full h-full object-cover rounded-[7px]"
+              />
             </div>
             <div>
               <span className="font-bold text-white text-sm">Zernosh Haider</span>

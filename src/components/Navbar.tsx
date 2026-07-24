@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Mail, Download, Sparkles, Check, Copy } from 'lucide-react';
+import { Mail, Download, Check, Copy } from 'lucide-react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 
 interface NavbarProps {
@@ -41,10 +41,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-500 p-[1px] shadow-neon-cyan transition-transform group-hover:scale-105">
-            <div className="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center">
-              <Smartphone className="w-5 h-5 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
-            </div>
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-500 p-[1px] shadow-neon-cyan transition-transform group-hover:scale-105 overflow-hidden">
+            <img
+              src="/zernoshlogo.png"
+              alt="Zernosh Haider Logo"
+              className="w-full h-full object-cover rounded-[11px] group-hover:scale-110 transition-transform duration-300"
+            />
           </div>
           <div>
             <div className="font-bold text-white tracking-wide text-base flex items-center gap-2">
