@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Github, Linkedin, Mail, Download, ArrowRight, Sparkles, Layers, ShieldCheck, Zap } from 'lucide-react';
+import { Smartphone, Linkedin, Mail, Download, ArrowRight, Sparkles, Layers, ShieldCheck, Zap, Store, MessageCircle } from 'lucide-react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 
 interface HeroProps {
@@ -88,7 +88,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
             variants={itemVariants}
             className="text-lg sm:text-xl text-slate-muted mb-8 max-w-2xl mx-auto font-normal leading-relaxed"
           >
-            Hi, I&apos;m <span className="text-white font-semibold">{PORTFOLIO_DATA.personal.name}</span>. I craft sleek, 60 FPS Flutter applications with clean BLoC/Riverpod architecture and Apple-grade micro-interactions.
+            Hi, I&apos;m <span className="text-white font-semibold">{PORTFOLIO_DATA.personal.name}</span>. Flutter Developer with <span className="text-white font-semibold">2+ years of experience</span> at <span className="text-cyan-400 font-semibold">The Tuitionist</span> building high-performance commercial apps (Tawil, Shop Chat, Raabta), plus my own published apps on <a href={PORTFOLIO_DATA.personal.socials.playstore} target="_blank" rel="noreferrer" className="text-emerald-400 font-semibold hover:underline">Google Play Store</a>.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -116,13 +116,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           {/* Social Badges */}
           <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 mb-16">
             <a
-              href={PORTFOLIO_DATA.personal.socials.github}
+              href={PORTFOLIO_DATA.personal.socials.playstore}
               target="_blank"
               rel="noreferrer"
-              className="p-3 rounded-xl glass-panel hover:bg-white/10 hover:border-cyan-500/50 hover:text-cyan-400 text-slate-muted transition-all duration-300 group"
-              aria-label="GitHub Profile"
+              className="p-3 rounded-xl glass-panel hover:bg-white/10 hover:border-emerald-500/50 hover:text-emerald-400 text-slate-muted transition-all duration-300 group"
+              aria-label="Play Store Apps"
             >
-              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Store className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+            <a
+              href={PORTFOLIO_DATA.personal.socials.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="p-3 rounded-xl glass-panel hover:bg-white/10 hover:border-emerald-500/50 hover:text-emerald-400 text-slate-muted transition-all duration-300 group"
+              aria-label="WhatsApp Chat"
+            >
+              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform text-emerald-400" />
             </a>
             <a
               href={PORTFOLIO_DATA.personal.socials.linkedin}

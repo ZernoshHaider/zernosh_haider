@@ -7,9 +7,9 @@ export interface Project {
   techStack: string[];
   features: string[];
   metrics: string;
-  githubUrl: string;
   liveDemoUrl: string;
-  phoneColor: string; // Tailored phone accent
+  phoneColor: string;
+  screenshot?: string;
   screens: {
     id: string;
     title: string;
@@ -42,162 +42,98 @@ export const PORTFOLIO_DATA = {
     subtitle: 'Specialized in High-Performance Flutter Architecture, Pixel-Perfect UI, & Firebase Backend Integrations.',
     location: 'Pakistan • Open to Global & Remote Roles',
     availability: 'Available for Freelance & Full-time Roles',
-    bio: 'Crafting ultra-fluid, native-performing cross-platform mobile apps for iOS & Android. Experienced in Clean Architecture, BLoC/Riverpod state management, custom animation engines, and seamless REST/GraphQL API integrations.',
+    bio: 'Flutter Developer with 2+ years of professional mobile engineering experience at The Tuitionist building robust, cross-platform Android & iOS applications. Independent app publisher managing an active Google Play Console Developer Account.',
     stats: [
+      { label: 'Professional Experience', value: '2+ Yrs' },
       { label: 'Apps Published / Shipped', value: '14+' },
-      { label: 'Flutter Core Mastery', value: '98%' },
+      { label: 'The Tuitionist Apps', value: '5+' },
       { label: 'Code Cleanliness Rating', value: '5/5' },
-      { label: 'User Retention Boost', value: '+42%' },
     ],
+    phone: '03359656672',
+    phoneFormatted: '+92 335 9656672',
     socials: {
-      github: 'https://github.com',
-      linkedin: 'https://linkedin.com',
-      email: 'zernosh.haider.dev@gmail.com',
-      twitter: 'https://twitter.com',
+      linkedin: 'https://www.linkedin.com/in/haider-zernosh-0a5b26382/',
+      email: 'zernosh.contact@gmail.com',
+      whatsapp: 'https://wa.me/923359656672',
+      playstore: 'https://play.google.com/store/search?q=momin%20pulse&c=apps&hl=en',
     },
+  },
+
+  companyExperience: {
+    company: 'The Tuitionist',
+    role: 'Flutter Developer',
+    experienceYears: '2+ Years Experience',
+    period: '2024 – 2026',
+    location: 'Rawalpindi / Islamabad, Pakistan',
+    summary: 'Spearheaded core mobile application development, feature releases, and code refactoring for high-impact commercial and utility applications using Flutter & Dart. Shipped multiple production apps across Google Play Store and Apple App Store.',
+    playStoreUrl: 'https://play.google.com/store/apps/developer?id=The+Tuitionist&hl=en',
+    appStoreUrl: 'https://apps.apple.com/us/iphone/search?term=thetuitionist',
+    apps: [
+      {
+        name: 'Tawil',
+        tag: 'Enterprise & Commercial',
+        description: 'Scalable commercial utility mobile app featuring streamlined API pipelines and high-speed data sync.',
+      },
+      {
+        name: 'The Tuitionist',
+        tag: 'EdTech & Learning',
+        description: 'Flagship educational platform with real-time class tracking, tutor booking, and seamless user management.',
+      },
+      {
+        name: 'Jazb',
+        tag: 'Interactive Media',
+        description: 'Engaging cross-platform application with smooth micro-interactions, responsive UI, and custom animation physics.',
+      },
+      {
+        name: 'Shop Chat',
+        tag: 'E-Commerce & Chat',
+        description: 'Real-time buyer-seller messaging, order notifications, and instant catalog exploration.',
+      },
+      {
+        name: 'Raabta',
+        tag: 'Social & Connectivity',
+        description: 'Community networking application with push notifications, offline-first SQLite cache, and instant sync.',
+      },
+    ],
   },
 
   projects: [
     {
-      id: 'apex-fitness',
-      title: 'ApexPulse Pro',
-      subtitle: 'Next-Gen AI Workout & Biometrics Tracker',
+      id: 'momin-pulse',
+      title: 'Momin Pulse',
+      subtitle: 'Complete Islamic Lifestyle & Prayer Companion App',
       category: 'flutter',
-      description: 'Ultra-fast Flutter mobile application featuring real-time heart rate sensor telemetry, offline-first SQLite cache, micro-interactions, and custom 60 FPS Canvas chart renders.',
-      techStack: ['Flutter 3.22', 'Dart', 'Firebase Auth', 'Riverpod 2.0', 'CustomPainter', 'REST API'],
+      description: 'A beautifully crafted Flutter-based Islamic app featuring accurate prayer time calculations, Quran reading, Qibla direction finder, daily Duas, Hijri calendar integration, and a stunning dark Islamic UI with gold accents. Published on Google Play Store.',
+      techStack: ['Flutter', 'Dart', 'Firebase', 'REST API', 'Geolocator', 'Provider'],
       features: [
-        'Custom 60 FPS Health Canvas Charts',
-        'Biometric Auth (FaceID & Fingerprint)',
-        'Offline-First Sync Engine',
-        'Dark Glassmorphic UI Aesthetics'
+        'Accurate Prayer Times with Countdown Timer',
+        'Quran Reading with Arabic Text',
+        'Qibla Direction Compass',
+        'Daily Duas & Supplications Collection',
+        'Hijri Calendar Integration',
+        'Beautiful Dark Islamic UI with Gold Accents'
       ],
-      metrics: '4.9★ Rating • 25k+ Active Installs',
-      githubUrl: 'https://github.com',
-      liveDemoUrl: 'https://apex-pulse-demo.app',
-      phoneColor: 'from-cyan-500/20 to-blue-600/20',
+      metrics: 'Published on Play Store • Live Users',
+      liveDemoUrl: 'https://play.google.com/store/search?q=momin%20pulse&c=apps&hl=en',
+      phoneColor: 'from-emerald-500/20 to-amber-600/20',
+      screenshot: '/momin-pulse-screenshot.png',
       screens: [
         {
           id: 'screen-1',
-          title: 'Live Telemetry Dashboard',
-          description: 'Real-time workout heart rate graph & calorie burn monitor.',
-          badge: 'Live Analytics',
-          accentColor: '#06b6d4',
-          mockContent: {
-            type: 'fitness',
-            statValue: '142 BPM',
-            statLabel: 'Current Heart Rate',
-            items: [
-              { name: 'Active Calories', value: '680 kcal', trend: '+14%' },
-              { name: 'Workout Duration', value: '45m 12s' },
-              { name: 'Recovery Score', value: '92/100', status: 'Optimal' },
-            ]
-          }
-        },
-        {
-          id: 'screen-2',
-          title: 'AI Workout Planner',
-          description: 'Personalized exercise routines generated via dynamic JSON feeds.',
-          badge: 'Smart Coach',
+          title: 'Prayer Times Dashboard',
+          description: 'Real-time prayer schedule with live countdown to the next prayer.',
+          badge: 'Prayer Times',
           accentColor: '#10b981',
           mockContent: {
             type: 'dashboard',
-            statValue: '4 Sets • 12 Reps',
-            statLabel: 'Heavy Deadlifts',
+            statValue: 'Sunrise',
+            statLabel: 'Current Prayer',
             items: [
-              { name: 'Target Muscle', value: 'Posterior Chain' },
-              { name: 'Rest Interval', value: '90 Seconds' },
-              { name: '1RM Prediction', value: '185 kg' },
-            ]
-          }
-        }
-      ]
-    },
-    {
-      id: 'neopay-wallet',
-      title: 'NeoPay Crypto & Fintech',
-      subtitle: 'Secured Cross-Platform Digital Vault App',
-      category: 'flutter',
-      description: 'Bank-grade cross-platform mobile wallet built with Flutter & Dart. Uses BLoC pattern, Encrypted SharedPreferences, biometric PIN security, and instant QR code payments.',
-      techStack: ['Flutter', 'Dart', 'Flutter BLoC', 'Web3 Dart', 'Biometrics', 'Node.js Backend'],
-      features: [
-        'End-to-End Payload Encryption',
-        'Instant P2P QR Code Remittance',
-        'Real-Time Crypto Ticker WebSockets',
-        'Multi-currency Fiat Converter'
-      ],
-      metrics: '$1.2M Monthly Volume Processed',
-      githubUrl: 'https://github.com',
-      liveDemoUrl: 'https://neopay-vault.app',
-      phoneColor: 'from-emerald-500/20 to-teal-600/20',
-      screens: [
-        {
-          id: 'screen-1',
-          title: 'Wallet Balance & Card View',
-          description: 'Glassmorphic virtual card with live balance & instant transfer shortcuts.',
-          badge: 'Vault Status',
-          accentColor: '#10b981',
-          mockContent: {
-            type: 'ecommerce',
-            statValue: '$24,850.40',
-            statLabel: 'Available Balance',
-            items: [
-              { name: 'Bitcoin (BTC)', value: '0.452 BTC', trend: '+5.4%' },
-              { name: 'Ethereum (ETH)', value: '4.120 ETH', trend: '+8.1%' },
-              { name: 'USDC Vault', value: '$8,500.00' },
-            ]
-          }
-        },
-        {
-          id: 'screen-2',
-          title: 'Transaction Audit Trail',
-          description: 'Categorized spending graphs and exportable PDF statement summaries.',
-          badge: 'Security Log',
-          accentColor: '#06b6d4',
-          mockContent: {
-            type: 'dashboard',
-            statValue: 'Zero-Fee Transfer',
-            statLabel: 'P2P Instant Wire',
-            items: [
-              { name: 'Recent Transfer', value: '-$250.00', status: 'Completed' },
-              { name: 'Merchant Cashier', value: '-$14.50', status: 'Verified' },
-              { name: 'Staking Yield', value: '+$42.10', trend: '+12.5%' },
-            ]
-          }
-        }
-      ]
-    },
-    {
-      id: 'foodie-dash',
-      title: 'FoodieGo Express',
-      subtitle: 'On-Demand Hyperlocal Delivery & Rider App',
-      category: 'cross-platform',
-      description: 'Dual-app ecosystem for Customers and Delivery Drivers with Google Maps API integration, live WebSocket rider tracking, dynamic order status pushes, and Stripe payment gateway.',
-      techStack: ['Flutter', 'Google Maps SDK', 'Firebase Cloud Messaging', 'Provider', 'REST API'],
-      features: [
-        'Live Rider Marker Smooth Interpolation',
-        'Push Notifications via FCM',
-        'Stripe & Apple Pay Integration',
-        'Rating & Review System'
-      ],
-      metrics: '10,000+ Orders Fulfilled',
-      githubUrl: 'https://github.com',
-      liveDemoUrl: 'https://foodiego-demo.app',
-      phoneColor: 'from-purple-500/20 to-pink-600/20',
-      screens: [
-        {
-          id: 'screen-1',
-          title: 'Real-Time Map Tracking',
-          description: 'Interactive map layer showing driver route and estimated arrival countdown.',
-          badge: 'Live Map',
-          accentColor: '#ec4899',
-          mockContent: {
-            type: 'social',
-            statValue: '12 Mins',
-            statLabel: 'Estimated Arrival',
-            items: [
-              { name: 'Rider Name', value: 'Alex R. (4.9★)' },
-              { name: 'Order ID', value: '#FG-90821' },
-              { name: 'Route Status', value: 'On the Way', status: 'Active' },
+              { name: 'Fajr', value: '05:27 AM', status: 'Offered' },
+              { name: 'Sunrise', value: '06:43 AM', status: 'Active' },
+              { name: 'Dhuhr', value: '11:54 AM' },
+              { name: 'Asr', value: '02:46 PM' },
+              { name: 'Maghrib', value: '05:24 PM' },
             ]
           }
         }
@@ -285,16 +221,16 @@ class WorkoutBloc extends Bloc<WorkoutEvent, WorkoutState> {
 
   experience: [
     {
-      role: 'Senior Mobile Developer',
-      company: 'TechPulse Solutions',
-      period: '2024 - Present',
-      description: 'Leading mobile application architecture in Flutter. Reduced app launch time by 35% and introduced automated integration testing.',
+      role: 'Flutter Developer (2+ Years Experience)',
+      company: 'The Tuitionist | Rawalpindi / Islamabad, Pakistan',
+      period: '2024 – 2026',
+      description: 'Spearheaded core mobile development, feature releases, and code refactoring for mobile applications using Flutter and Dart. Shipped multiple commercial apps including Tawil, The Tuitionist, Jazb, Shop Chat, and Raabta to Google Play Store and Apple App Store.',
     },
     {
-      role: 'Flutter App Engineer',
-      company: 'AppVenture Studio',
-      period: '2022 - 2024',
-      description: 'Developed 8+ cross-platform applications for fintech and healthcare clients with 99.8% crash-free sessions.',
+      role: 'Independent Mobile App Publisher',
+      company: 'Google Play Console Developer Account',
+      period: '2024 – Present',
+      description: 'Own and operate a verified personal Google Play Console developer account. Built and published Momin Pulse with dynamic prayer calculations, offline caching, and responsive UI.',
     },
   ]
 };

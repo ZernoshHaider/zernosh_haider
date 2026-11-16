@@ -30,29 +30,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       // Fallback if confetti script isn't loaded
     }
 
-    // Simulate instant generation and download trigger
+    // Download actual PDF resume
     setTimeout(() => {
       const element = document.createElement('a');
-      const file = new Blob([
-        `ZERNOSH HAIDER - MOBILE & CROSS-PLATFORM DEVELOPER\n
-Email: ${PORTFOLIO_DATA.personal.socials.email}
-Location: ${PORTFOLIO_DATA.personal.location}
-GitHub: ${PORTFOLIO_DATA.personal.socials.github}
-LinkedIn: ${PORTFOLIO_DATA.personal.socials.linkedin}\n
-SUMMARY:
-${PORTFOLIO_DATA.personal.bio}\n
-CORE SKILLS:
-- Mobile Development: Flutter, Dart, Android Kotlin (Platform Channel), iOS Swift Channel
-- State Management: BLoC Pattern, Riverpod 2.0, Provider, Clean Architecture
-- Backend & Databases: Firebase (Firestore, Auth, Cloud Functions, FCM), SQLite, Hive
-- Networking: REST APIs, Dio Interceptors, WebSockets, GraphQL
-- Tools & DevOps: Git, Fastlane CI/CD, Figma, Agile Methodology\n
-FEATURED PROJECTS:
-${PORTFOLIO_DATA.projects.map(p => `- ${p.title} (${p.subtitle}): ${p.description}`).join('\n')}
-`
-      ], { type: 'text/plain' });
-      element.href = URL.createObjectURL(file);
-      element.download = 'Zernosh_Haider_Flutter_Developer_Resume.txt';
+      element.href = '/Zernosh_Haider_Resume.pdf';
+      element.download = 'Zernosh_Haider_Resume.pdf';
       document.body.appendChild(element);
       element.click();
       document.body.removeChild(element);
@@ -148,14 +130,18 @@ ${PORTFOLIO_DATA.projects.map(p => `- ${p.title} (${p.subtitle}): ${p.descriptio
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div className="p-3 rounded-xl bg-white/5 border border-white/5">
-                      <div className="text-xs text-slate-400">Location & Mobility</div>
+                      <div className="text-xs text-slate-400">Location</div>
                       <div className="text-xs font-bold text-white mt-1">{PORTFOLIO_DATA.personal.location}</div>
                     </div>
                     <div className="p-3 rounded-xl bg-white/5 border border-white/5">
                       <div className="text-xs text-slate-400">Contact Email</div>
                       <div className="text-xs font-bold text-cyan-400 mt-1 truncate">{PORTFOLIO_DATA.personal.socials.email}</div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-white/5 border border-white/5">
+                      <div className="text-xs text-slate-400">Phone / WhatsApp</div>
+                      <div className="text-xs font-bold text-emerald-400 mt-1 truncate">{PORTFOLIO_DATA.personal.phone}</div>
                     </div>
                   </div>
 
@@ -187,6 +173,37 @@ ${PORTFOLIO_DATA.projects.map(p => `- ${p.title} (${p.subtitle}): ${p.descriptio
                       </div>
                       <div className="text-xs text-slate-400 font-mono">{exp.company}</div>
                       <p className="text-xs text-slate-300">{exp.description}</p>
+                      {exp.company.includes('The Tuitionist') && (
+                        <div className="flex flex-wrap gap-2 pt-1">
+                          <a
+                            href={PORTFOLIO_DATA.companyExperience.playStoreUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-[11px] font-mono border border-emerald-500/30 transition-all"
+                          >
+                            <span>Play Store Developer Profile</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                          <a
+                            href={PORTFOLIO_DATA.companyExperience.appStoreUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 text-[11px] font-mono border border-cyan-500/30 transition-all"
+                          >
+                            <span>App Store Profile</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                          <a
+                            href="/The_Tuitionist_Experience_Letter.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 text-[11px] font-mono border border-amber-500/30 transition-all"
+                          >
+                            <span>Official Experience Letter</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

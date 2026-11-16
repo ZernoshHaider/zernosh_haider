@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUp, Linkedin, Mail } from 'lucide-react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -60,8 +60,11 @@ export const Footer: React.FC = () => {
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
           <p>© {new Date().getFullYear()} Zernosh Haider. Built with Next.js, Tailwind CSS & Framer Motion.</p>
           <div className="flex items-center gap-4">
-            <a href={PORTFOLIO_DATA.personal.socials.github} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
-              GitHub
+            <a href={PORTFOLIO_DATA.personal.socials.whatsapp} target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">
+              WhatsApp
+            </a>
+            <a href={PORTFOLIO_DATA.personal.socials.playstore} target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">
+              Play Store
             </a>
             <a href={PORTFOLIO_DATA.personal.socials.linkedin} target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
               LinkedIn

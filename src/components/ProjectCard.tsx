@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
 export interface ProjectProps {
   id: string;
@@ -8,7 +8,6 @@ export interface ProjectProps {
   tags: string[];
   gradient: string;
   demoUrl?: string;
-  githubUrl?: string;
 }
 
 export default function ProjectCard({ project }: { project: ProjectProps }) {
@@ -96,20 +95,6 @@ export default function ProjectCard({ project }: { project: ProjectProps }) {
           }}
         >
           Live Demo <ArrowUpRight size={16} />
-        </a>
-
-        <a
-          href={project.githubUrl || '#'}
-          aria-label="View Source Code"
-          style={{
-            color: 'var(--text-secondary)',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            fontSize: '0.85rem',
-          }}
-        >
-          <Github size={18} /> Code
         </a>
       </div>
     </div>
